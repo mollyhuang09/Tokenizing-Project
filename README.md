@@ -6,10 +6,13 @@ Large Language Models (LLMs) such as ChatGPT take text as their input and return
 2. How do we store the (number,text) pairs so that they can be retrieved quickly? – This part is harder. Given a new string of text, we need to be able to quickly find the numerical tokens without searching the whole array.
 
 The second problem is solved via hashing as shown below:
-a. Read the word character-by-character, and add the ASCII values of its characters. For instance the word “Any” has ASCII values 65 + 110 + 121 = 296
-b. Use that integer as the hash key in the hashing function shown below
-c. In the hash table, store the word and its index in the token dictionary
-d. Resolve hashing collisions using separate chaining
+1. Read the word character-by-character, and add the ASCII values of its characters. For instance the word “Any” has ASCII values 65 + 110 + 121 = 296
+2. Use that integer as the hash key in the hashing function shown below
+3. In the hash table, store the word and its index in the token dictionary
+4. Resolve hashing collisions using separate chaining
 
-Primary Hash Function 
-h(k) = kk mod m where k is the key and m is the size of the hash table
+
+
+**Primary Hash Function**
+
+_h(k) = k mod m_ where _k_ is the key and _m_ is the size of the hash table
